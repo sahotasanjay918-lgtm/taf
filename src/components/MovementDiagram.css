@@ -1,0 +1,32 @@
+.taf-movement-diagram {
+  width: min(60vw, 200px);
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-board-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.taf-movement-diagram__svg {
+  width: 100%;
+  height: 100%;
+}
+
+.taf-movement-diagram__arrow {
+  stroke: var(--color-light);
+  stroke-width: 4;
+}
+
+.taf-movement-diagram__head {
+  fill: var(--color-light);
+}
+
+.taf-movement-diagram__center {
+  fill: var(--color-bg);
+  stroke: var(--color-light);
+  stroke-width: 3;
+}
+
+.taf-movement-diagram__center-dot {
+  fill: var(--color-light);
+}

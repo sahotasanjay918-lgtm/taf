@@ -1,0 +1,66 @@
+.taf-contact {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.taf-contact__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg);
+  gap: var(--space-sm);
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.taf-contact__title {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.taf-contact__label {
+  font-size: 0.85rem;
+  margin-top: var(--space-sm);
+}
+
+.taf-contact__input,
+.taf-contact__textarea {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  color: var(--color-light);
+  font-family: var(--font-body);
+  padding: var(--space-sm);
+  font-size: 0.9rem;
+}
+
+.taf-contact__textarea {
+  resize: vertical;
+}
+
+.taf-contact__input:focus,
+.taf-contact__textarea:focus {
+  outline: 2px solid var(--color-white);
+  outline-offset: 1px;
+}
+
+.taf-contact__content .taf-button {
+  align-self: flex-start;
+  margin-top: var(--space-md);
+}
+
+.taf-contact__status {
+  font-size: 0.85rem;
+  margin-top: var(--space-sm);
+}
+
+.taf-contact__status--success {
+  color: var(--color-white);
+}
+
+.taf-contact__status--error {
+  color: #e08787;
+}

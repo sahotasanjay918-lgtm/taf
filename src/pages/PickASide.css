@@ -1,0 +1,26 @@
+.taf-pickside {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.taf-pickside__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-lg);
+  gap: var(--space-lg);
+}
+
+.taf-pickside__title {
+  font-size: 1.6rem;
+}
+
+.taf-pickside__actions {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  justify-content: center;
+}

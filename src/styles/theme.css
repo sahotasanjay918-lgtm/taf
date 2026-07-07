@@ -1,0 +1,53 @@
+/*
+  ============================================================
+  THEME.CSS — the single source of truth for how TAF looks
+  ============================================================
+  This file holds every colour, font, and spacing value used
+  across the whole site as "CSS variables" (the --names below).
+
+  WHY THIS MATTERS FOR YOU (non-technical note):
+  If you ever want to change a colour or font site-wide, you
+  only need to edit ONE value in THIS file — every button,
+  page, and popup that uses it will update automatically.
+  You never need to hunt through other files.
+
+  Example: want a lighter background everywhere?
+  Just change --color-bg below. That's it.
+  ============================================================
+*/
+
+:root {
+  /* ---------- COLOURS ---------- */
+  /* Pulled from your Figma colour tokens */
+  --color-bg: #0c0c0c;          /* main dark background (colour/Variant2) */
+  --color-bg-panel: #1a1a1a;    /* slightly lighter panels/popups */
+  --color-light: #d9d9d9;       /* default light grey (colour/Default) */
+  --color-white: #eeeeee;       /* attacker piece / white text */
+  --color-black: #0b0b0b;       /* defender piece / solid fill */
+  --color-border: #d9d9d9;      /* button + input outlines */
+
+  /* Board squares (from the checkerboard pattern in Figma) */
+  --color-board-light: #9a9a9a;
+  --color-board-dark: #8a8a8a;
+
+  /* ---------- FONTS ---------- */
+  /* Both are free Google Fonts — imported in index.html */
+  --font-title: "Caesar Dressing", cursive;   /* runic-style logo/headings */
+  --font-body: "Alegreya Sans SC", sans-serif; /* all other text */
+
+  /* ---------- SPACING ---------- */
+  /* A consistent spacing scale keeps padding/margins uniform
+     across every page, instead of random pixel values */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+
+  /* ---------- SHAPE ---------- */
+  --radius-button: 6px;
+  --radius-popup: 12px;
+
+  /* ---------- BOARD ---------- */
+  --board-size: min(90vw, 400px);
+}

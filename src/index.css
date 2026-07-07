@@ -1,0 +1,49 @@
+/*
+  ============================================================
+  INDEX.CSS — global base styles
+  ============================================================
+  This applies the tokens from theme.css to the whole page
+  (background colour, default font, etc). Individual
+  pages/components add their own extra styles on top of this.
+  ============================================================
+*/
+
+@import "./styles/theme.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-light);
+  font-family: var(--font-body);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-title);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}

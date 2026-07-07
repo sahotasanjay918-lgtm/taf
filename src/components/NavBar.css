@@ -1,0 +1,57 @@
+.taf-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  position: relative;
+}
+
+.taf-navbar__logo {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  color: var(--color-light);
+  text-decoration: none;
+}
+
+.taf-navbar__menu-button {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--space-xs);
+}
+
+.taf-navbar__menu-button span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-light);
+}
+
+.taf-navbar__dropdown {
+  position: absolute;
+  top: 100%;
+  right: var(--space-lg);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md);
+  gap: var(--space-md);
+  z-index: 20;
+  min-width: 180px;
+}
+
+.taf-navbar__dropdown a,
+.taf-navbar__dropdown-link {
+  color: var(--color-light);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  text-align: right;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}

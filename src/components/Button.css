@@ -1,0 +1,37 @@
+.taf-button {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-button);
+  border: 2px solid var(--color-border);
+  transition: transform 0.1s ease, opacity 0.15s ease;
+}
+
+.taf-button:hover {
+  opacity: 0.85;
+}
+
+.taf-button:active {
+  transform: scale(0.98);
+}
+
+.taf-button:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 2px;
+}
+
+.taf-button--solid {
+  background-color: var(--color-light);
+  color: var(--color-bg);
+}
+
+.taf-button--outline {
+  background-color: transparent;
+  color: var(--color-light);
+}
+
+.taf-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

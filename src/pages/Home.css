@@ -1,0 +1,46 @@
+.taf-home {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.taf-home__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-xl) var(--space-lg);
+  gap: var(--space-md);
+}
+
+.taf-home__title {
+  font-size: 2.6rem;
+  margin-top: var(--space-lg);
+}
+
+.taf-home__subtitle {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  margin: 0 0 var(--space-md) 0;
+  color: var(--color-light);
+}
+
+.taf-home__board {
+  margin: var(--space-md) 0;
+}
+
+.taf-home__tagline {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 320px;
+  margin: 0 0 var(--space-lg) 0;
+}
+
+.taf-home__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+  max-width: 220px;
+}

@@ -1,0 +1,42 @@
+.taf-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  z-index: 100;
+}
+
+.taf-popup {
+  position: relative;
+  background-color: var(--color-bg-panel);
+  border-radius: var(--radius-popup);
+  padding: var(--space-lg);
+  max-width: 320px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-md);
+}
+
+.taf-popup__close {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-md);
+  background: none;
+  border: none;
+  color: var(--color-light);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: var(--space-xs);
+}
+
+.taf-popup__close:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 2px;
+}

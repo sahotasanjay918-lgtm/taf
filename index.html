@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TAF | Hnefetafl - Viking Chess</title>
+
+    <!-- Fonts used across the site (see src/styles/theme.css) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@400;500;700&family=Caesar+Dressing&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--
+      GOOGLE ANALYTICS (GA4) — usage tracking
+      ========================================
+      ⚠️ SETUP NEEDED: G-XXXXXXXXXX below is a placeholder. Before
+      this can track anything real, you'll need to:
+        1. Create a free Google Analytics account at
+           https://analytics.google.com
+        2. Create a new "GA4" property for this site
+        3. Copy the Measurement ID it gives you (starts with "G-")
+        4. Paste it in place of BOTH placeholders below
+      Until that's done, this script loads but nothing is actually
+      recorded anywhere — it's a safe no-op, not an error.
+      This is also covered as a step in the non-technical setup guide.
+    -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      // send_page_view is disabled here because this is a
+      // single-page app — src/hooks/analytics.ts sends page views
+      // manually whenever the visible page actually changes.
+      gtag("config", "G-XXXXXXXXXX", { send_page_view: false });
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

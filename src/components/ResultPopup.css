@@ -1,0 +1,13 @@
+.taf-result__title {
+  font-size: 1.6rem;
+}
+
+.taf-result__tagline {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.taf-result__actions {
+  display: flex;
+  gap: var(--space-md);
+}
