@@ -1,4 +1,4 @@
-# TAF — Hnefetafl (Viking Chess)
+# TAF — Hnefetafl (Viking Chess!)
 
 This is the codebase for your Hnefetafl web app. This file explains, in plain
 English, what everything does — you should be able to read this without any
