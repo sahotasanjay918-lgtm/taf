@@ -21,7 +21,7 @@ import Button from "../components/Button";
 import { trackEvent } from "../hooks/analytics";
 import "./Contact.css";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID_HERE";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xkoleded";
 const DEFAULT_SUBJECT = "hnefetafl - feedback";
 
 type SubmitState = "idle" | "sending" | "sent" | "error";
