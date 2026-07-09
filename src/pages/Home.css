@@ -10,31 +10,42 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: var(--space-xl) var(--space-lg);
-  gap: var(--space-md);
+  padding: var(--space-lg);
+  gap: var(--space-lg);
 }
 
+/* The ONE and only place --font-hero (Caesar Dressing) is used —
+   the literal "HNEFETAFL" logo lettering. Everything else on the
+   site, including the "Viking chess" line right below it, uses
+   the heading font instead (see index.css). */
 .taf-home__title {
-  font-size: 2.6rem;
-  margin-top: var(--space-lg);
+  font-family: var(--font-hero);
+  font-size: var(--text-hero);
+  font-weight: 400;
+  margin-top: var(--space-md);
 }
 
 .taf-home__subtitle {
-  font-family: var(--font-title);
-  font-size: 1.3rem;
-  margin: 0 0 var(--space-md) 0;
+  font-family: var(--font-heading);
+  font-size: var(--text-h2);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin: 0;
   color: var(--color-light);
 }
 
 .taf-home__board {
-  margin: var(--space-md) 0;
+  margin: var(--space-sm) 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .taf-home__tagline {
-  font-size: 0.95rem;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
   line-height: 1.6;
-  max-width: 320px;
-  margin: 0 0 var(--space-lg) 0;
+  max-width: 340px;
 }
 
 .taf-home__actions {
@@ -42,5 +53,6 @@
   flex-direction: column;
   gap: var(--space-md);
   width: 100%;
-  max-width: 220px;
+  max-width: 280px;
+  margin-top: var(--space-sm);
 }

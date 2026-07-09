@@ -7,8 +7,8 @@
 }
 
 .taf-navbar__logo {
-  font-family: var(--font-title);
-  font-size: 1.1rem;
+  font-family: var(--font-heading);
+  font-size: var(--text-h2);
   color: var(--color-light);
   text-decoration: none;
 }
@@ -18,13 +18,13 @@
   border: none;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: var(--space-xs);
+  gap: 5px;
+  padding: var(--space-sm);
 }
 
 .taf-navbar__menu-button span {
   display: block;
-  width: 22px;
+  width: 24px;
   height: 2px;
   background-color: var(--color-light);
 }
@@ -40,15 +40,15 @@
   padding: var(--space-md);
   gap: var(--space-md);
   z-index: 20;
-  min-width: 180px;
+  min-width: 200px;
 }
 
 .taf-navbar__dropdown a,
 .taf-navbar__dropdown-link {
   color: var(--color-light);
   text-decoration: none;
-  font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-family: var(--font-heading);
+  font-size: var(--text-body);
   text-align: right;
   background: none;
   border: none;

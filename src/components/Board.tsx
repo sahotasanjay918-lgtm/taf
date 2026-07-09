@@ -10,6 +10,7 @@
  *   - the board diagrams inside the tutorial popups
  */
 import type { Board as BoardType, Position } from "../game/types";
+import PieceIcon from "./icons/PieceIcon";
 import "./Board.css";
 
 interface BoardProps {
@@ -67,17 +68,7 @@ export default function Board({
                   cell ? `, ${cell}` : ""
                 }`}
               >
-                {cell && (
-                  <span
-                    className={[
-                      "taf-piece",
-                      `taf-piece--${cell}`,
-                    ].join(" ")}
-                    aria-hidden="true"
-                  >
-                    {cell === "king" && <span className="taf-piece__king-mark">W</span>}
-                  </span>
-                )}
+                {cell && <PieceIcon type={cell} className="taf-piece" />}
               </button>
             );
           })}

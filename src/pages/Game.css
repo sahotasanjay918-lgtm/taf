@@ -14,24 +14,27 @@
 }
 
 .taf-game__title {
-  font-size: 1.8rem;
+  font-size: var(--text-h1);
   text-align: center;
 }
 
 .taf-game__title-sub {
-  font-size: 1.1rem;
+  font-size: var(--text-h2);
   opacity: 0.8;
 }
 
 .taf-game__board {
   margin: var(--space-sm) 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .taf-game__actions {
   display: flex;
   gap: var(--space-md);
   width: 100%;
-  max-width: 320px;
+  max-width: 400px;
   justify-content: space-between;
   margin-top: auto;
   padding-bottom: var(--space-lg);

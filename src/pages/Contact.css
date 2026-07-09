@@ -16,13 +16,14 @@
 }
 
 .taf-contact__title {
-  font-size: 1.8rem;
+  font-size: var(--text-h1);
   text-align: center;
   margin-bottom: var(--space-md);
 }
 
 .taf-contact__label {
-  font-size: 0.85rem;
+  font-family: var(--font-heading);
+  font-size: var(--text-small);
   margin-top: var(--space-sm);
 }
 
@@ -34,7 +35,7 @@
   color: var(--color-light);
   font-family: var(--font-body);
   padding: var(--space-sm);
-  font-size: 0.9rem;
+  font-size: var(--text-body);
 }
 
 .taf-contact__textarea {
@@ -53,7 +54,8 @@
 }
 
 .taf-contact__status {
-  font-size: 0.85rem;
+  font-family: var(--font-body);
+  font-size: var(--text-small);
   margin-top: var(--space-sm);
 }
 
