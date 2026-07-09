@@ -1,4 +1,4 @@
-# TAF — Hnefetafl (Viking Chess!)
+# TAF — Hnefetafl (Viking Chess)
 
 This is the codebase for your Hnefetafl web app. This file explains, in plain
 English, what everything does — you should be able to read this without any
@@ -202,6 +202,62 @@ other file just calls `trackEvent('something_happened')` without knowing
 GA4 is even involved, so swapping to Mixpanel or anything else later
 would only mean editing this one file.
 
+**Design revision round 1 (just applied):** a full pass fixing typography,
+spacing, piece design, board sizing, and a resign confirmation step,
+based on your review of the live site.
+
+### What changed
+
+| Your feedback | What I did |
+|---|---|
+| Text too small | Introduced a proper type scale (`--text-hero/h1/h2/body/small` in `theme.css`) and applied it everywhere instead of one-off font sizes |
+| Inconsistent/cramped spacing | Widened popups, increased the spacing scale (`--space-*` values), added consistent gaps site-wide |
+| No visual hierarchy | Title/heading/body now have clearly distinct sizes and weights everywhere, not just on paper |
+| "Viking chess" used the wrong font | Split fonts into 3 explicit roles — `--font-hero` (Caesar Dressing, ONLY the literal "HNEFETAFL" logo), `--font-heading` (Alegreya Sans SC, every other heading/button/label), `--font-body` (new: regular Alegreya Sans, for paragraphs) |
+| Small-caps hard to read in body text | Added the regular (non-SC) Alegreya Sans as a new font import, used only for paragraph copy |
+| Board too small | Now `clamp(320px, 96vw, 600px)` — effectively full-width on mobile, capped at 600px (1.5× the old 400px) on larger screens |
+| Piece design didn't match | Rebuilt as solid-colour circles with a thin opposite-colour ring in the middle; king now shows a crown icon instead of "W" |
+| Resign was instant | Added a reusable `ConfirmDialog` component — both the bottom Resign button and the in-game menu now ask "Are you sure?" before ending the game |
+
+### An honest note on the pieces (point 7)
+
+I've rebuilt these as my best interpretation of "solid colour, thin
+opposite-colour stroke ring in the middle," and a simple crown icon for
+the king. You mentioned you have actual SVGs for the pieces and board —
+**please send those over** and I'll swap in an exact match rather than my
+approximation. The code is structured so this swap will be quick: piece
+visuals live entirely in `components/Board.tsx` and `Board.css`, so
+nothing else needs to change.
+
+### A bug caught along the way
+
+While rebuilding the fonts, I found that `NavBar.css` was still
+referencing the old `--font-title` variable name from before this
+redesign — it would have silently fallen back to the browser default
+font. Fixed as part of this pass; mentioning it for the same reason as
+always: catching my own mistakes rather than letting them slide.
+
+**Pieces now match your exact SVGs (just applied).** The 3 files you sent
+over were simple and precise, so rather than approximate them again,
+I recreated them exactly as React components in
+`components/icons/PieceIcon.tsx`:
+
+- Attacker: solid `#EEEEEE` circle with a thin `#0B0B0B` stroke ring
+- Defender: solid `#0B0B0B` circle with a thin white stroke ring
+- King: same as defender, plus the exact crown shape from your SVG
+
+Colours are wired to the shared theme tokens rather than hardcoded
+hex values, so they'll still update automatically if you ever change
+the palette in `theme.css`. `Board.css` got simpler as a result — it
+now only controls how big a piece sits in its square; the actual
+piece artwork lives entirely in `PieceIcon.tsx`.
+
+**A bug caught and fixed along the way:** I initially placed the new
+file inside `components/icons/` but wrote an import path as if it were
+directly inside `components/` — TypeScript's build step caught this
+immediately (it wouldn't compile), so it never made it further than my
+own testing.
+
 ### How to check my work
 
 ```
@@ -282,8 +338,6 @@ npm run build       # builds the production-ready version
 
 ## What's next
 
-Everything from your original brief is now built: every page, the full
-rules engine, the AI, sounds, and analytics. The only thing left is the
-**non-technical, step-by-step guide** for actually getting this live on
-the internet — accounts to create, the two placeholder values to swap
-in (Formspree + GA4), and how staging/production hosting will work.
+All 8 points from your first design review round are now fully resolved,
+including an exact match on the pieces. Waiting on your next round of
+feedback once you've checked this on staging.
