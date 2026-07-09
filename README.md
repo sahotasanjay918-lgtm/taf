@@ -4,6 +4,12 @@ This is the codebase for your Hnefetafl web app. This file explains, in plain
 English, what everything does — you should be able to read this without any
 coding background.
 
+**Also see [`DECISIONS.md`](./DECISIONS.md)** — a running log of every
+non-obvious call made along the way (rules edge cases, tech choices,
+design decisions) and *why*. If you ever start a fresh conversation
+about this project, or bring in a developer, that file is the fastest
+way to get up to speed without needing any chat history.
+
 ## What's in this project so far
 
 **Step 1 — Foundation:** the empty scaffolding (routing, fonts, colours).
