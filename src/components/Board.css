@@ -1,9 +1,10 @@
 /*
-  Board.css — visual styling for the board grid and pieces.
-  Colours/sizes pulled from the Figma piece components:
-    - Attacker: outline-only ring, white (#eeeeee)
-    - Defender: solid filled circle, near-black (#0b0b0b)
-    - King: solid dark circle with a light "W" mark in the centre
+  Board.css — visual styling for the board grid.
+
+  Piece appearance itself (colours, the inner ring, the king's
+  crown) lives inside components/icons/PieceIcon.tsx, which
+  recreates your exact piece SVGs — this file just controls how
+  big a piece sits within its square.
 */
 
 .taf-board {
@@ -16,7 +17,7 @@
 }
 
 .taf-board--preview {
-  --board-size: min(80vw, 260px);
+  --board-size: var(--board-size-preview);
   pointer-events: none;
 }
 
@@ -52,32 +53,6 @@
 }
 
 .taf-piece {
-  width: 78%;
-  height: 78%;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.taf-piece--attacker {
-  background-color: transparent;
-  border: 2px solid var(--color-white);
-}
-
-.taf-piece--defender {
-  background-color: var(--color-black);
-  border: 2px solid var(--color-black);
-}
-
-.taf-piece--king {
-  background-color: var(--color-black);
-  border: 2px solid var(--color-black);
-}
-
-.taf-piece__king-mark {
-  color: var(--color-light);
-  font-family: var(--font-body);
-  font-size: 0.65rem;
-  font-weight: 700;
+  width: 82%;
+  height: 82%;
 }

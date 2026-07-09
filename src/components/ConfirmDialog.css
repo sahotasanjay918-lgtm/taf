@@ -1,19 +1,19 @@
-.taf-result__title {
+.taf-confirm__title {
   font-size: var(--text-h1);
 }
 
-.taf-result__tagline {
+.taf-confirm__message {
   font-family: var(--font-body);
   font-size: var(--text-body);
   line-height: 1.5;
 }
 
-.taf-result__actions {
+.taf-confirm__actions {
   display: flex;
   gap: var(--space-md);
   width: 100%;
 }
 
-.taf-result__actions .taf-button {
+.taf-confirm__actions .taf-button {
   flex: 1;
 }

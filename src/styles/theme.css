@@ -30,24 +30,53 @@
   --color-board-light: #9a9a9a;
   --color-board-dark: #8a8a8a;
 
-  /* ---------- FONTS ---------- */
-  /* Both are free Google Fonts — imported in index.html */
-  --font-title: "Caesar Dressing", cursive;   /* runic-style logo/headings */
-  --font-body: "Alegreya Sans SC", sans-serif; /* all other text */
+  /* ---------- FONTS ----------
+     Three distinct roles, matching your Figma exactly:
+       1. --font-hero:    the runic "HNEFETAFL" logo lettering ONLY.
+                            Never used for anything else — it isn't
+                            readable enough for regular text.
+       2. --font-heading: every other heading/label/button/nav
+                            item (page titles like "Pick a side to
+                            play", popup titles, "Viking chess",
+                            etc). Small-caps style, used at a
+                            genuinely heading-sized weight/size so
+                            it reads as a heading, not body text.
+       3. --font-body:     paragraphs and any longer text a person
+                            actually has to read (taglines, tutorial
+                            copy, About page). Deliberately NOT the
+                            small-caps version — mixed case is
+                            easier to read at length.
+  */
+  --font-hero: "Caesar Dressing", cursive;
+  --font-heading: "Alegreya Sans SC", sans-serif;
+  --font-body: "Alegreya Sans", sans-serif;
+
+  /* ---------- TYPE SCALE ----------
+     A clear size difference between each level is what creates
+     "hierarchy" — the eye should immediately know what's the
+     most important thing on the screen. */
+  --text-hero: clamp(2.4rem, 9vw, 3.4rem);   /* the HNEFETAFL logo */
+  --text-h1: clamp(1.6rem, 6vw, 2.1rem);     /* page titles */
+  --text-h2: clamp(1.2rem, 4.5vw, 1.5rem);   /* sub-headings, e.g. "Viking chess" */
+  --text-body: 1.05rem;                       /* paragraphs, taglines */
+  --text-small: 0.9rem;                       /* captions, helper text */
 
   /* ---------- SPACING ---------- */
   /* A consistent spacing scale keeps padding/margins uniform
      across every page, instead of random pixel values */
-  --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 16px;
-  --space-lg: 24px;
-  --space-xl: 40px;
+  --space-xs: 6px;
+  --space-sm: 12px;
+  --space-md: 20px;
+  --space-lg: 32px;
+  --space-xl: 48px;
 
   /* ---------- SHAPE ---------- */
   --radius-button: 6px;
   --radius-popup: 12px;
 
-  /* ---------- BOARD ---------- */
-  --board-size: min(90vw, 400px);
+  /* ---------- BOARD ----------
+     Full-width (minus a little breathing room) on mobile, capped
+     at 600px on larger screens — about 1.5x the old 400px cap. */
+  --board-size: clamp(320px, 96vw, 600px);
+  --board-size-preview: clamp(180px, 60vw, 260px);
 }

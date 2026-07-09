@@ -21,6 +21,8 @@ body {
   background-color: var(--color-bg);
   color: var(--color-light);
   font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
   min-height: 100vh;
 }
 
@@ -30,17 +32,35 @@ body {
   flex-direction: column;
 }
 
+/* Headings default to the heading font (Alegreya Sans SC) at
+   heading sizes. The ONE exception — the "HNEFETAFL" logo itself
+   on the Home page — overrides this with its own class, since
+   that's the only place the runic --font-hero should ever appear. */
 h1,
 h2,
 h3 {
-  font-family: var(--font-title);
-  font-weight: 400;
+  font-family: var(--font-heading);
+  font-weight: 500;
   letter-spacing: 0.02em;
   margin: 0;
 }
 
-button {
+h1 {
+  font-size: var(--text-h1);
+}
+
+h2 {
+  font-size: var(--text-h2);
+}
+
+p {
   font-family: var(--font-body);
+  font-size: var(--text-body);
+  margin: 0;
+}
+
+button {
+  font-family: var(--font-heading);
   cursor: pointer;
 }
 

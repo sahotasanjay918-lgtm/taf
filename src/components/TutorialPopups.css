@@ -1,5 +1,5 @@
 .taf-tutorial__title {
-  font-size: 1.4rem;
+  font-size: var(--text-h1);
 }
 
 .taf-tutorial__visual {
@@ -7,20 +7,17 @@
   justify-content: center;
 }
 
-.taf-tutorial__visual .taf-board--preview {
-  --board-size: min(60vw, 200px);
-}
-
 .taf-tutorial__body {
-  font-size: 0.9rem;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
   line-height: 1.6;
   text-align: left;
   width: 100%;
 }
 
 .taf-tutorial__body ul {
-  margin: 0.3rem 0 0.6rem 0;
-  padding-left: 1.2rem;
+  margin: 0.4rem 0 0.8rem 0;
+  padding-left: 1.3rem;
 }
 
 .taf-tutorial__actions {

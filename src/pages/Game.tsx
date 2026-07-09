@@ -7,12 +7,13 @@
  * component just displays whatever that store says the current
  * state is, and forwards clicks/button-presses to it.
  */
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import InGameMenu from "../components/InGameMenu";
 import Board from "../components/Board";
 import Button from "../components/Button";
 import ResultPopup from "../components/ResultPopup";
+import ConfirmDialog from "../components/ConfirmDialog";
 import { useGameStore } from "../store/gameStore";
 import { useGameSetupStore } from "../store/gameSetupStore";
 import { useUIStore } from "../store/uiStore";
@@ -32,6 +33,10 @@ export default function Game() {
   const startNewGame = useGameStore((s) => s.startNewGame);
   const selectSquare = useGameStore((s) => s.selectSquare);
   const resign = useGameStore((s) => s.resign);
+
+  // Resigning is permanent, so both the bottom button and the menu
+  // item open this confirmation instead of resigning immediately.
+  const [isResignConfirmOpen, setIsResignConfirmOpen] = useState(false);
 
   // If someone lands on /game directly without picking a side
   // first, send them back — there's nothing to play yet.
@@ -74,7 +79,7 @@ export default function Game() {
   return (
     <div className="taf-game">
       <InGameMenu
-        onResign={resign}
+        onResign={() => setIsResignConfirmOpen(true)}
         onRestart={() => startNewGame(humanSide, difficulty)}
       />
 
@@ -96,11 +101,25 @@ export default function Game() {
           <Button variant="outline" onClick={openTutorial}>
             Tutorial
           </Button>
-          <Button variant="outline" onClick={resign}>
+          <Button variant="outline" onClick={() => setIsResignConfirmOpen(true)}>
             Resign
           </Button>
         </div>
       </main>
+
+      {isResignConfirmOpen && (
+        <ConfirmDialog
+          title="Resign?"
+          message="Are you sure you want to resign? This will end the game and count as a loss."
+          confirmLabel="Yes, resign"
+          cancelLabel="Keep playing"
+          onConfirm={() => {
+            setIsResignConfirmOpen(false);
+            resign();
+          }}
+          onCancel={() => setIsResignConfirmOpen(false)}
+        />
+      )}
 
       {game.status !== "ongoing" && (
         <ResultPopup

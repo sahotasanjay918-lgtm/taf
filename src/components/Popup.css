@@ -13,8 +13,8 @@
   position: relative;
   background-color: var(--color-bg-panel);
   border-radius: var(--radius-popup);
-  padding: var(--space-lg);
-  max-width: 320px;
+  padding: var(--space-xl) var(--space-lg) var(--space-lg);
+  max-width: 400px;
   width: 100%;
   display: flex;
   flex-direction: column;
